@@ -10,6 +10,7 @@ function [F_solid, V_solid , tri] = DataToStl( Raw_data ,smoothing_factor )
 %outputs:
 %3D plot of the solid object
 %Stl file saved as GC×GC.stl
+Raw_data = readtable(Raw_data);
 
 % Read the file
 data = Raw_data;
@@ -52,7 +53,7 @@ vertices = vertices(valid_indices, :); %keeping the rows of the matrix with vali
 faces = delaunay(vertices(:, 1), vertices(:, 2));
 
 % Create a solid volume from positive data
-[F_solid, V_solid] = surf2solid(faces, vertices, 'elevation', -5); %2 is theheight of solid bottom(can be changed based on the data)
+[F_solid, V_solid] = surf2solid(faces, vertices, 'elevation', -6); %2 is theheight of solid bottom(can be changed based on the data)
 
 % Save STL file for positive peaks
 tri = triangulation(F_solid, V_solid); %This command creates a triangulation object in MATLAB, which provides geometric and topological information about the mesh.
