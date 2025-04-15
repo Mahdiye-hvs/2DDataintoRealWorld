@@ -148,7 +148,7 @@ for i = 1:length(letters)
     %looping through all detected boundaries in the binary image 
     for k = 1:length(B)
         % reduces the number of points
-        boundary = B{k}(1:2:end, :); % downsample for speed
+        boundary = B{k}; % downsample for speed
         
         %extracting x and y
         x = boundary(:,2);
