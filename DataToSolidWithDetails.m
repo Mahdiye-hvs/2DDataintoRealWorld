@@ -89,7 +89,7 @@ faces = delaunay(vertices(:, 1), vertices(:, 2));
 %get the inout letters
 letters = char(Data_name);
 fontSize = 15; %font size
-depth = 10; %the amount of extruding
+depth = 5; %the amount of extruding
 spacing = 20; %the spacing between each character
 startY = 0; %the starting point
 
