@@ -90,7 +90,7 @@ faces = delaunay(vertices(:, 1), vertices(:, 2));
 letters = char(Data_name);
 fontSize = 15; %font size
 depth = 5; %the amount of extruding
-spacing = 20; %the spacing between each character
+spacing = 12; %the spacing between each character
 startY = 0; %the starting point
 
 %for making the letters as standing ones we need a matrix to multiply and
@@ -143,7 +143,7 @@ for i = 1:length(letters)
     B= bwboundaries(BW, 'noholes'); 
     %placing a letters in 130 x, change the starting point for the next
     %letter , and Z in 0
-    pos = [130; 50 + startY; 0];
+    pos = [130; 10 + startY; 0];
 
     %looping through all detected boundaries in the binary image 
     for k = 1:length(B)
@@ -206,12 +206,28 @@ all_text_faces = vertcat(all_text_faces{:});
 %each store in a seperate cell so this is true when they all store in
 %seperatedly cells
 number_labels = arrayfun(@num2str, dimension_num, 'UniformOutput', false);
+length(dimension_num(1))
 number_positions = [
-    102, 13, 10;
-    102, 140, 10;
-    80,27, 10;
-    0, 27, 10
+    102, 13, 10; %do not need adjusting
+    102, 130, 10; 
+    100,27, 10;
+    0, 27, 10 %do not need adjusting
 ];
+
+%adjust the position depending on the figure
+if length(number_labels{2}) == 3
+    number_positions(2 , :) = [102 , 140 , 10];
+elseif length(number_labels{2}) == 1
+    number_positions(2 , :) = [102 , 150 , 10];
+end
+if length(number_labels{3}) == 2
+    number_positions(3 , :) = [90 , 27 , 10];
+elseif length(number_labels{3}) == 1
+    number_positions(3 , :) = [90 , 27 , 10];
+end
+
+
+
 %Rotates the object 270° around the Z-axis in XY plane
 number_rotations = {eye(3), eye(3), ...
     [cosd(270) -sind(270) 0; sind(270) cosd(270) 0; 0 0 1], ...
@@ -234,7 +250,7 @@ for n = 1:length(number_labels)
     B = bwboundaries(BW, 'noholes');
 
     for k = 1:length(B)
-        boundary = B{k}(1:3:end, :); % downsample
+        boundary = B{k}; % downsample
         x = boundary(:,2);
         y = boundary(:,1);
         z0 = zeros(size(x));
