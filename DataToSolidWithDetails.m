@@ -217,16 +217,16 @@ number_positions = [
 %adjust the position depending on the figure
 if length(number_labels{2}) == 3
     number_positions(2 , :) = [102 , 140 , 10];
-elseif length(number_labels{2}) == 1
+elseif length(number_labels{2}) == (1 || 2)
     number_positions(2 , :) = [102 , 150 , 10];
 end
 if length(number_labels{3}) == 2
     number_positions(3 , :) = [90 , 27 , 10];
 elseif length(number_labels{3}) == 1
     number_positions(3 , :) = [90 , 27 , 10];
+elseif length(number_labels{3}) == 3
+    number_positions(3 , :) = [80 , 27 , 10];
 end
-
-
 
 %Rotates the object 270° around the Z-axis in XY plane
 number_rotations = {eye(3), eye(3), ...
