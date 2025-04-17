@@ -1,9 +1,8 @@
-function[combined_V , combined_F ,TR] = DataWithName( Raw_data ,smoothing_factor , Data_name )
+function [combined_V , combined_F ,TR] = DataWithName( Raw_data ,smoothing_factor , Data_name )
 
    % Reading the Data, smooth it, scale it and generate the faces and vertices
 
-
-data = readtable(Raw_data);
+data = Raw_data;
 
 %turn the data table into array
 data = table2array(data) ;

@@ -22,7 +22,7 @@ function [combined_V, combined_F , TR] = DataWithDetails( Raw_data ,smoothing_fa
 %Stl file saved with the number and text on it
 %% Reading the Data, smooth it, scale it and generate the faces and vertices
 
-data = readtable(Raw_data);
+data =Raw_data;
 
 %turn the data table into array
 data = table2array(data) ; 
@@ -299,7 +299,7 @@ num_faces_shifted = num_faces + size(Solid_vertices, 1) + size(all_text_vertices
 combined_V = [Solid_vertices; all_text_vertices; num_vertices; v_solid_translated];
 combined_F = [Solid_faces; text_faces_shifted; num_faces_shifted; f_solid_shifted];
 % 
-TR = triangulation(combined_faces, combined_vertices);
+TR = triangulation(combined_F, combined_V);
 % stlwrite(TR, 'cube_with_text_number_and_custom_object.stl');
 % disp('✅ Exported as cube_with_text_number_and_custom_object.stl');
 % 
