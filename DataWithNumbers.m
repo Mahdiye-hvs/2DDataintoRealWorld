@@ -72,7 +72,7 @@ vertices = [0 0 0;
 %each store in a seperate cell so this is true when they all store in
 %seperatedly cells
 number_labels = arrayfun(@num2str, dimension_num, 'UniformOutput', false);
-length(dimension_num(1))
+% length(dimension_num(1))
 number_positions = [
     102, 13, 10; %do not need adjusting
     102, 130, 10; 
