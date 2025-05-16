@@ -1,5 +1,3 @@
-%%GC×GC subfunction
-
 function [F_solid, V_solid , tri] = DataToStl( Raw_data ,smoothing_factor )
 %This functions turn a raw data into Stl file, ready for print
 
