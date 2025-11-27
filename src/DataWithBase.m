@@ -51,7 +51,7 @@ vertices = vertices(valid_indices, :); %keeping the rows of the matrix with vali
 faces = delaunay(vertices(:, 1), vertices(:, 2));
 
 % Create a solid volume from positive data
-[F_solid, V_solid] = surf2solid(faces, vertices, 'elevation', -6); %2 is theheight of solid bottom(can be changed based on the data)
+[F_solid, V_solid] = surf2solid(faces, vertices, 'elevation', -6); %6 is theheight of solid bottom(can be changed based on the data)
 
 % Create solid cube
 % Creating a solid cube which the x dimension is 130 and y simension is 180
