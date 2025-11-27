@@ -74,7 +74,7 @@ The workflow outputs an STL file suitable for slicing and 3D printing. Depending
 ```text
 src/                Core MATLAB functions for STL generation
 src/app/            Interactive MATLAB App (STLapp.mlapp)
-examples/           Example scripts and demo data
-figures/            Optional images for documentation
+examples/           Example data
+figures/            Image in the App
 LICENSE             MIT License
 CITATION.cff        Citation metadata
