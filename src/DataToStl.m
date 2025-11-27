@@ -58,4 +58,21 @@ tri = triangulation(F_solid, V_solid); %This command creates a triangulation obj
 end
 
 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
