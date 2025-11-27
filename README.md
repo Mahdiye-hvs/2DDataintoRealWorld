@@ -23,7 +23,7 @@ Users have two main options:
 1. **MATLAB workflow and app** – for users who have access to MATLAB.  
 2. **Standalone application** – for users without MATLAB, using the compiled installer and MATLAB Runtime.
 
-For the MATLAB version, download or clone the entire repository and add the `src` folder to your MATLAB path. Users may either run the provided example scripts in the `examples/` directory or launch the interactive MATLAB app (`STLapp.mlapp`) located in `src/app/`.
+For the MATLAB version, download or clone the entire repository and add the `src` folder to your MATLAB path. Users may either run the provided functions scripts in the `src/` directory or launch the interactive MATLAB app (`STLapp.mlapp`) located in `Release`.
 
 The basic workflow consists of:  
 1. Loading or importing a 2D matrix representing the chemical data  
