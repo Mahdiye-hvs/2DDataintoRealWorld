@@ -77,4 +77,3 @@ src/app/            Interactive MATLAB App (STLapp.mlapp)
 examples/           Example data
 figures/            Image in the App
 LICENSE             MIT License
-CITATION.cff        Citation metadata
